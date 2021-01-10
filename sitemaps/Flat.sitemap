@@ -29,7 +29,7 @@
                 Slider item=Gateway_Brightness
                 Switch item=Gateway_SoundSwitch
 
-            Frame label="Тестовый Шлюз MQTT8888888888"
+            Frame label="Тестовый Шлюз MQTT"
              Switch item=TestMQTT
              Slider item=Test_DIMM1
             }
