@@ -1,0 +1,13 @@
+//Локальное время
+ntp:ntp:local  [hostname="nl.pool.ntp.org", refreshInterval=60, refreshNtp=30, locale="Europe/Moscow" timeZone="Europe/Moscow"]
+
+//Погода
+Bridge openweathermap:weather-api:api "OpenWeatherMap Account" [apikey="8a3a7d1c1ce9aa5ee268d38f245e7552", refreshInterval=120, language="ru"] {
+    Thing weather-and-forecast local "Local Weather And Forecast" [location="56.8619,35.8931", forecastHours=0, forecastDays=7]
+}
+
+//Восход и закат 
+astro:sun:home  [ geolocation="56.89060596325879,35.90355045363336", interval=60 ]
+
+
+// Bridge mihome:bridge:f0b429XXXXXX "Xiaomi Gateway" [ serialNumber="04cf8cab8f42", ipAddress="192.168.0.100", port=9898, key="uvt7rqv5wy01q1yp", pollingInterval=6000 ]

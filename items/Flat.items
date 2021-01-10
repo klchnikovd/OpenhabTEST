@@ -1,0 +1,39 @@
+// Датчик движения
+Switch Motion "Motion status" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:motion"}
+Number MotionOffTimer "Motion off timer" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:motionOffTimer"}
+DateTime LastMotion "Last activity [%1$td-%1$tm-%1$tY  %1$tH:%1$tM]" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:lastMotion"}
+Number BatteryLevel "Battery level" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:batteryLevel"}
+Switch LowBattery "Low battery" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:lowBattery"} 
+
+//Розетка
+Switch Power "Power" {channel="mihome:sensor_plug:04cf8cab8f42:158d0003970cb4:power"}
+Switch InUse "In use" {channel="mihome:sensor_plug:04cf8cab8f42:158d0003970cb4:inUse"}
+Number LoadPower "Provided power" {channel="mihome:sensor_plug:04cf8cab8f42:158d0003970cb4:loadPower"}
+Number PowerConsumed "Power consumed" {channel="mihome:sensor_plug:04cf8cab8f42:158d0003970cb4:powerConsumed"}
+
+//Актуальная дата и время
+DateTime Today  "Datum [MAP(week.map):%1$tA]"  { channel="ntp:ntp:local:dateTime" }
+DateTime Time  "Time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"  { channel="ntp:ntp:local:dateTime" } 
+
+//Текущая температурра
+Number   Temperature   "Temperature [%.2f °C]"   {weather="locationId=home-OWM, type=temperature, property=current"}
+
+//Восход и закат
+DateTime RiseStart "Start time [%1$tH:%1$tM]" {channel="astro:sun:dfe6e678:rise#start"}
+DateTime RiseEnd "End time [%1$tH:%1$tM]" {channel="astro:sun:dfe6e678:set#start"}
+String SeasonName "Season name" {channel="astro:sun:dfe6e678:season#name"[profile="transform:MAP", function="season.map", sourceFormat="%s"]}
+String ZodiacSign "Sign" {channel="astro:sun:dfe6e678:zodiac#sign"[profile="transform:MAP", function="zodiac.map", sourceFormat="%s"]}
+
+//Местоположеение
+Location HomeLocation "Tver"
+
+//Xiaomi Gateway
+Switch Gateway_LightSwitch "Вкл/Выкл Свет" {channel="mihome:gateway:04cf8cab8f42:04cf8cab8f42:brightness"}
+Dimmer Gateway_Brightness "Яркость" { channel="mihome:gateway:04cf8cab8f42:4cf8cab8f42:brightness" }
+Color Gateway_Color "Цвет" { channel="mihome:gateway:04cf8cab8f42:04cf8cab8f42:color" }
+Dimmer ColorTemperature "Color temperature" {channel="mihome:gateway:04cf8cab8f42:04cf8cab8f42:colorTemperature"}
+Switch Gateway_SoundSwitch "Звук вкл/выкл" { channel="mihome:gateway:04cf8cab8f42:04cf8cab8f42:enableSound" }
+
+//Test MQTT Broker
+Switch TestMQTT "Тест брокера" {channel="mqtt:topic:c8a49899:TestMQTT"}
+Dimmer Test_DIMM1 "Тест брокера2" {channel="mqtt:topic:c8a49899:TestDIM1"}

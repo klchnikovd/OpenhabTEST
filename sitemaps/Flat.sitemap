@@ -1,0 +1,36 @@
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////// МОИ SITEMAP - TEST//////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+        sitemap Flat label="Квартира_тест"
+        {
+            Text item=Time label="Дата и время: " icon="time"
+            Frame label="Восход и закат" {
+                Text item=Today label="Восход и закат.  Сегодня -  "icon="sun_clouds" {
+                    Frame label="" {
+                        Text item=RiseStart label="Восход" icon="sunrise"
+                        Text item=RiseEnd label="Закат" icon="sunset"
+                        Text item=ZodiacSign  label="Знак Зодиака" icon= "astrology"
+                        Text item=SeasonName  label="Время года" icon="sun_clouds"
+                        Mapview  label="Местоположение" item=HomeLocation icon= "movecontrol"
+                    }
+                } 
+                Text item=Temperature label="Температура за окном" icon="sunrise"    
+            Frame  label="Тестовая розетка"
+                Text item=LoadPower label="Потребляемая мощность" icon="energy"
+                Switch item=Power label="Питание розетки" icon="switch"
+                 
+            Frame label="Тестовый датчик движения"
+                Text item=BatteryLevel label="Уровень заряда" icon="batterylevel"
+                Text item=LastMotion label="Последнее движение" icon="motion"      
+
+            Frame label="Тестовый шлюз умного дома"
+                Switch item=Gateway_LightSwitch label="Свет" icon="lightbulb"
+                Default item=Gateway_Color
+                Slider item=Gateway_Brightness
+                Switch item=Gateway_SoundSwitch
+
+            Frame label="Тестовый Шлюз MQTT"
+             Switch item=TestMQTT
+             Slider item=Test_DIMM1
+            }
+        }

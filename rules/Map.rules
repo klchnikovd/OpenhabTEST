@@ -1,0 +1,7 @@
+rule "Initialize Location"
+when
+    System started
+then
+    var PointType home = new PointType("56.8827287,35.9005436")
+    HomeLocation.postUpdate(home)
+end
