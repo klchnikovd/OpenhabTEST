@@ -23,7 +23,7 @@
                 Text item=BatteryLevel label="Уровень заряда" icon="batterylevel"
                 Text item=LastMotion label="Последнее движение" icon="motion"      
 
-            Frame label="Тестовый шлюз умного дома"
+            Frame label="Тестовый шлюз умного дома Xiaomi"
                 Switch item=Gateway_LightSwitch label="Свет" icon="lightbulb"
                 Default item=Gateway_Color
                 Slider item=Gateway_Brightness
