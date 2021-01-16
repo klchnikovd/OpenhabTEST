@@ -1,0 +1,5 @@
+sitemap Test label="Тест" {
+    Frame {
+        Group item=FamilyRoom
+    }
+}

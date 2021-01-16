@@ -1,0 +1,11 @@
+Group     Home                "Тест"          <house>                                 ["Building"]
+
+Group     GF                  "Первый этаж"   <groundfloor>   (Home)                  ["GroundFloor"]
+
+Group     FamilyRoom          "Гостиная"      <parents_2_4>   (Home)                  ["Room"]
+
+Contact   FamilyRoom_Window   "Окно"          <window>        (FamilyRoom, gWindow)   ["Window"]                 {channel=""}
+Dimmer    FamilyRoom_Blind    "Жалюзи"        <blinds>        (FamilyRoom, gBlind)    ["Blinds", "Switchable"]   {channel=""}
+
+Group:Contact:OR(OPEN, CLOSED)   gWindow   "Окно"     <window>   (Home)   ["Window"]
+Group:Dimmer                     gBlind    "Жалюзи"   <blinds>   (Home)   ["Blinds", "Switchable"]
