@@ -1,9 +1,14 @@
+
+// Switch Motion "Motion status" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:motion"}
+// Number MotionOffTimer "Motion off timer" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:motionOffTimer"}
+// DateTime LastMotion "Last activity [%1$td-%1$tm-%1$tY  %1$tH:%1$tM]" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:lastMotion"}
+// Number BatteryLevel "Battery level" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:batteryLevel"}
+// Switch LowBattery "Low battery" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:lowBattery"} 
+
 // Датчик движения
-Switch Motion "Motion status" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:motion"}
-Number MotionOffTimer "Motion off timer" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:motionOffTimer"}
-DateTime LastMotion "Last activity [%1$td-%1$tm-%1$tY  %1$tH:%1$tM]" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:lastMotion"}
-Number BatteryLevel "Battery level" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:batteryLevel"}
-Switch LowBattery "Low battery" {channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:lowBattery"} 
+Switch MotionSensor_MotionStatus <motion>  { channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:motion" }
+DateTime MotionSensor_LastMotion "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:lastMotion" }
+Number MotionSensor_Battery <battery> { channel="mihome:sensor_motion:04cf8cab8f42:158d0003f12aed:batteryLevel" }
 
 //Розетка
 Switch Power "Power" {channel="mihome:sensor_plug:04cf8cab8f42:158d0003970cb4:power"}

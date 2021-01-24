@@ -20,8 +20,8 @@
                 Switch item=Power label="Питание розетки" icon="switch"
                  
             Frame label="Тестовый датчик движения"
-                Text item=BatteryLevel label="Уровень заряда" icon="batterylevel"
-                Text item=LastMotion label="Последнее движение" icon="motion"      
+                Text item=MotionSensor_Battery label="Уровень заряда" icon="batterylevel"
+                Text item=MotionSensor_LastMotion label="Последнее движение" icon="motion"      
 
             Frame label="Тестовый шлюз умного дома Xiaomi"
                 Switch item=Gateway_LightSwitch label="Свет" icon="lightbulb"
