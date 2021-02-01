@@ -33,4 +33,8 @@
              Switch item=TestMQTT
              Slider item=Test_DIMM1
             }
+    Text label="LOGS. Последняя ошибка в логах" icon="error" {
+     Frame label="openHAB Log Reader" {
+		Text item=logreaderLastError	}
+    }
         }
