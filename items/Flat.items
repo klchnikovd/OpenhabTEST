@@ -44,4 +44,4 @@ Switch TestMQTT "Тест брокера" {channel="mqtt:topic:c8a49899:TestMQTT
 Dimmer Test_DIMM1 "Тест брокера2" {channel="mqtt:topic:c8a49899:TestDIM1"}
 
 //Log Reader Binding
-String   logreaderLastError         "Last error [%s]"                                       { channel="logreader:reader:e0711ed7:lastErrorEvent" }
+String   logreaderLastError         "Last error"                                       { channel="logreader:reader:e0711ed7:lastErrorEvent" }
