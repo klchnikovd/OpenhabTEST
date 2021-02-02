@@ -1,7 +1,7 @@
 rule "LogReader"
     when
-        Channel 'logreader:reader:e0711ed7:lastErrorEvent' triggered
+        Channel 'logreader:reader:e0711ed7:newErrorEvent' triggered
     then
         val telegramAction = getActions("telegram","telegram:telegramBot:3e60800c")
-        telegramAction.sendTelegram("*ERROR* LogReader Event!\n%s Errors are in the log! Here is the last row of it:\n`%s`", logreaderErrors.state.toString, logreaderLastError.state.toString)
+        telegramAction.sendTelegram(logreaderLastError.state.toString)
     end
